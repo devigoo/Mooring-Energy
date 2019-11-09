@@ -14,7 +14,7 @@ import java.awt.Font;
 
 public class MooringEnergy {
 
-	private JFrame frmEnergiaCumowaniaWg;
+	private JFrame frmEnergy;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -22,7 +22,7 @@ public class MooringEnergy {
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
-	private JLabel lblEnergiaCumowaniaStatku;
+	private JLabel lblEnergy;
 
 	
 	//Method which counts energy from user input and checks if all the fields are correctly filled in
@@ -48,8 +48,8 @@ public class MooringEnergy {
 		double fourthPart = ((k * k) / ((k * k) + (r * r)));
 		double fifthPart = (mw * w0 * w0) / 2;
 		double lastPart = ((k * k) * (r * r)) / ((k * k) + (r * r));
-		double energia = ((firstPart * secondPart) - (thirdPart * fourthPart)) + (fifthPart * lastPart);
-		String en = String.valueOf(energia);
+		double energy = ((firstPart * secondPart) - (thirdPart * fourthPart)) + (fifthPart * lastPart);
+		String en = String.valueOf(energy);
 
 		textField_6.setText(en);
 		}
@@ -61,13 +61,12 @@ public class MooringEnergy {
 	}
 
 	//Launching the application
-	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					MooringEnergy window = new MooringEnergy();
-					window.frmEnergiaCumowaniaWg.setVisible(true);
+					window.frmEnergy.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -82,77 +81,77 @@ public class MooringEnergy {
 
 	//Initialize contents of the frame
 	private void initialize() {
-		frmEnergiaCumowaniaWg = new JFrame();
-		frmEnergiaCumowaniaWg.getContentPane().setBackground(Color.LIGHT_GRAY);
-		frmEnergiaCumowaniaWg.setFont(new Font("Aharoni", Font.PLAIN, 12));
-		frmEnergiaCumowaniaWg.setForeground(Color.ORANGE);
-		frmEnergiaCumowaniaWg.getContentPane().setForeground(Color.WHITE);
-		frmEnergiaCumowaniaWg.setTitle("Energia cumowania wg V.Costy");
-		frmEnergiaCumowaniaWg.setBounds(100, 100, 735, 496);
-		frmEnergiaCumowaniaWg.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmEnergiaCumowaniaWg.getContentPane().setLayout(null);
+		frmEnergy = new JFrame();
+		frmEnergy.getContentPane().setBackground(Color.LIGHT_GRAY);
+		frmEnergy.setFont(new Font("Aharoni", Font.PLAIN, 12));
+		frmEnergy.setForeground(Color.ORANGE);
+		frmEnergy.getContentPane().setForeground(Color.WHITE);
+		frmEnergy.setTitle("Energia cumowania wg V.Costy");
+		frmEnergy.setBounds(100, 100, 735, 496);
+		frmEnergy.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmEnergy.getContentPane().setLayout(null);
 
 		textField = new JTextField();
 		textField.setBounds(43, 51, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField);
+		frmEnergy.getContentPane().add(textField);
 		textField.setColumns(10);
 
 		JLabel label = new JLabel("");
 		label.setBounds(127, 38, 46, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(label);
+		frmEnergy.getContentPane().add(label);
 
-		JLabel lblPodajMasWirtualn = new JLabel("Podaj mas\u0119 wirtualn\u0105 [t]");
-		lblPodajMasWirtualn.setBounds(88, 38, 165, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblPodajMasWirtualn);
+		JLabel virtualMass = new JLabel("Podaj mas\u0119 wirtualn\u0105 [t]");
+		virtualMass .setBounds(88, 38, 165, 14);
+		frmEnergy.getContentPane().add(virtualMass);
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(43, 106, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField_1);
+		frmEnergy.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(43, 169, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField_2);
+		frmEnergy.getContentPane().add(textField_2);
 
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(43, 238, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField_3);
+		frmEnergy.getContentPane().add(textField_3);
 
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(43, 302, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField_4);
+		frmEnergy.getContentPane().add(textField_4);
 
-		JLabel lblPromieBezwadnocim = new JLabel("Promie\u0144 bezw\u0142adno\u015Bci [m]");
-		lblPromieBezwadnocim.setBounds(88, 91, 171, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblPromieBezwadnocim);
+		JLabel lblInertRad = new JLabel("Promie\u0144 bezw\u0142adno\u015Bci [m]");
+		lblInertRad.setBounds(88, 91, 171, 14);
+		frmEnergy.getContentPane().add(lblInertRad);
 
-		JLabel lblPrdkoObrotowrads = new JLabel("Pr\u0119dko\u015B\u0107 obrotow\u0105 [rad/s]");
-		lblPrdkoObrotowrads.setBounds(88, 155, 165, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblPrdkoObrotowrads);
+		JLabel lblRotSpeed = new JLabel("Pr\u0119dko\u015B\u0107 obrotow\u0105 [rad/s]");
+		lblRotSpeed.setBounds(88, 155, 165, 14);
+		frmEnergy.getContentPane().add(lblRotSpeed);
 
-		JLabel lblNewLabel = new JLabel("Pr\u0119dko\u015B\u0107 liniow\u0105 [m/s]");
-		lblNewLabel.setBounds(94, 224, 165, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblNewLabel);
+		JLabel lblLinSpeed = new JLabel("Pr\u0119dko\u015B\u0107 liniow\u0105 [m/s]");
+		lblLinSpeed.setBounds(94, 224, 165, 14);
+		frmEnergy.getContentPane().add(lblLinSpeed);
 
-		JLabel lblNewLabel_1 = new JLabel("D\u0142ugo\u015B\u0107 rzutu r na lini\u0119 cumowania a [m]");
-		lblNewLabel_1.setBounds(43, 290, 251, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblNewLabel_1);
+		JLabel lblProjection = new JLabel("D\u0142ugo\u015B\u0107 rzutu r na lini\u0119 cumowania a [m]");
+		lblProjection.setBounds(43, 290, 251, 14);
+		frmEnergy.getContentPane().add(lblProjection);
 
 		textField_5 = new JTextField();
 		textField_5.setBounds(43, 369, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField_5);
+		frmEnergy.getContentPane().add(textField_5);
 		textField_5.setColumns(10);
 
-		JLabel lblPromieObrotuR = new JLabel("Promie\u0144 obrotu r [m]");
-		lblPromieObrotuR.setBounds(88, 356, 171, 14);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblPromieObrotuR);
+		JLabel lblRotRadius = new JLabel("Promie\u0144 obrotu r [m]");
+		lblRotRadius.setBounds(88, 356, 171, 14);
+		frmEnergy.getContentPane().add(lblRotRadius);
 
 		JButton btnOblicz = new JButton("Oblicz");
 		btnOblicz.setBounds(324, 41, 304, 42);
-		frmEnergiaCumowaniaWg.getContentPane().add(btnOblicz);
+		frmEnergy.getContentPane().add(btnOblicz);
 		btnOblicz.addActionListener(new ActionListener() {
 
 			@Override
@@ -167,12 +166,12 @@ public class MooringEnergy {
 
 		textField_6 = new JTextField();
 		textField_6.setBounds(324, 169, 302, 37);
-		frmEnergiaCumowaniaWg.getContentPane().add(textField_6);
+		frmEnergy.getContentPane().add(textField_6);
 		textField_6.setColumns(10);
 
-		lblEnergiaCumowaniaStatku = new JLabel("Energia cumowania statku [kJ]");
-		lblEnergiaCumowaniaStatku.setBounds(394, 133, 216, 32);
-		frmEnergiaCumowaniaWg.getContentPane().add(lblEnergiaCumowaniaStatku);
+		lblEnergy = new JLabel("Energia cumowania statku [kJ]");
+		lblEnergy.setBounds(394, 133, 216, 32);
+		frmEnergy.getContentPane().add(lblEnergy);
 
 	}
 }
