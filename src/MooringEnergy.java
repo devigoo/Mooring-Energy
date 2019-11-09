@@ -34,6 +34,7 @@ public class MooringEnergy {
 
 		
 		try {
+	//Get input from the user
 		double mw = Double.parseDouble(textField.getText());
 		double k = Double.parseDouble(textField_1.getText());
 		double w0 = Double.parseDouble(textField_2.getText());
@@ -42,12 +43,12 @@ public class MooringEnergy {
 		double r = Double.parseDouble(textField_5.getText());
 		
 		double firstPart = (mw * v * v) / 2;
-		double secPart = 1 - ((a * a) / ((k * k) + (r * r)));
-		double thPart = mw * v * w0;
-		double fPart = ((k * k) / ((k * k) + (r * r)));
+		double secondPart = 1 - ((a * a) / ((k * k) + (r * r)));
+		double thirdPart = mw * v * w0;
+		double fourthPart = ((k * k) / ((k * k) + (r * r)));
 		double fifthPart = (mw * w0 * w0) / 2;
 		double lastPart = ((k * k) * (r * r)) / ((k * k) + (r * r));
-		double energia = ((firstPart * secPart) - (thPart * fPart)) + (fifthPart * lastPart);
+		double energia = ((firstPart * secondPart) - (thirdPart * fourthPart)) + (fifthPart * lastPart);
 		String en = String.valueOf(energia);
 
 		textField_6.setText(en);
