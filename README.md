@@ -17,9 +17,11 @@ Simple desktop gui app which calculates the kinetic energy of a mooring ship usi
 ## Screenshots
 
 * View of the app
+
 ![Example screenshot](https://user-images.githubusercontent.com/46251960/68551939-0a7b5a00-0412-11ea-8cb4-4de199576b4a.png)
 
 * Correct input
+
 ![screen](https://user-images.githubusercontent.com/46251960/68551963-3f87ac80-0412-11ea-89bd-d176b0241f6b.png)
 
 * Prompt user when other value than digit has been inputed
